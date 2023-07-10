@@ -1,0 +1,10 @@
+.container {
+    padding: 20px 40px 20px 40px;
+}
+.cards-row > div {
+    margin: 20px;
+}
+
+.hero-body {
+    padding: 1.5rem !important;
+}

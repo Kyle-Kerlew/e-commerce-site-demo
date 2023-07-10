@@ -1,0 +1,14 @@
+.checkout-progress > img, span:not(:last-child) {
+    margin-right: 1rem;
+}
+.checkout-progress {
+    margin-bottom: 20px;
+}
+
+.checkout-progress > img, span {
+    cursor: default; /*regular cursor pointer*/
+}
+
+.no-gap {
+    gap: unset !important;
+}

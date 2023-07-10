@@ -1,0 +1,11 @@
+.cart-item {
+    display: flex;
+    padding: 10px 15px;
+}
+
+.cart-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
