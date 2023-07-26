@@ -1,6 +1,3 @@
-.checkout-progress > img, span:not(:last-child) {
-    margin-right: 1rem;
-}
 .checkout-progress {
     margin-bottom: 20px;
 }

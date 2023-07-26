@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import {
     PaymentElement,
     useStripe,
@@ -25,7 +25,7 @@ export default function CheckoutForm() {
             return;
         }
 
-        stripe.retrievePaymentIntent(clientSecret).then(({paymentIntent}) => {
+        stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
             switch (paymentIntent.status) {
                 case "succeeded":
                     setMessage("Payment succeeded!");
@@ -54,11 +54,11 @@ export default function CheckoutForm() {
 
         setIsLoading(true);
 
-        const {error} = await stripe.confirmPayment({
+        const { error } = await stripe.confirmPayment({
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "http://localhost:3000",
+                return_url: "http://localhost:8000",
             },
         });
 
@@ -80,11 +80,9 @@ export default function CheckoutForm() {
         <div className={"container"}>
             <p className={"title has-text-centered"}> Payment Info</p>
             <form id="payment-form" onSubmit={handleSubmit}>
-                <PaymentElement id="payment-element"/>
-                <button className="button is-primary mt-5" disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay Now"}
-        </span>
+                <PaymentElement id="payment-element" />
+                <button className={`button is-primary mt-5 ${isLoading ? 'is-loading' : ''}`} disabled={isLoading || !stripe || !elements} id="submit">
+                    Pay Now
                 </button>
                 {/* Show any error or success messages */}
                 {message && <div id="payment-message">{message}</div>}

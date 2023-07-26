@@ -20,3 +20,11 @@ hr {
 .no-padding {
     padding: unset !important;
 }
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-1 {
+    gap: 1rem;
+}

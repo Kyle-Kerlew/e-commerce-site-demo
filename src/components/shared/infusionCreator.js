@@ -11,6 +11,7 @@ function InfusionCreator(props) {
     const [selections, setSelections] = useState({})
     function startInfusion() {
         setLoading(true);
+        //ensure a selection has been made for each category 
         const search = new URLSearchParams({...selections});
         console.log("search", );
         navigate(`/cart?${search.toString()}`);

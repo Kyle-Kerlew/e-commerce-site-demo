@@ -1,0 +1,4 @@
+.layout-container {
+    width: clamp(250px, 100%, 1079px);
+    margin: 0 auto;
+}

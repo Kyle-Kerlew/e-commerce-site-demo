@@ -1,3 +1,26 @@
-.cart {
-    gap: 40px;
+.cart-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    ;
+}
+
+/* Any children of the cart */
+.cart-grid>* {
+    height: fit-content;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 830px) {
+    .cart-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .cart-grid>* {
+        width: fit-content;
+    }
 }
