@@ -11,14 +11,16 @@ const stripePromise = loadStripe("pk_test_51KchKjBnhd3hTTDFY5SHc201jrZoDuKbEYKdv
 
 function PaymentPage({ location }) {
     console.log(location.state)
+    const { cart, address } = location.state;
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
-        // Create PaymentIntent as soon as the page loads
+        // Load items from cart including prices to create payment intent
         fetch("http://localhost:4242/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+            //load items from cart
+            body: JSON.stringify({ items: cart, address }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
@@ -34,7 +36,7 @@ function PaymentPage({ location }) {
 
     return (
         <Layout>
-            <div className="container is-flex  is-flex-direction-column is-align-items-center">
+            <div className="container is-flex is-flex-direction-column is-align-items-center">
                 <CheckoutProgress stage={CheckoutState.PAYMENT} />
                 {clientSecret && (
                     <Elements options={options} stripe={stripePromise}>

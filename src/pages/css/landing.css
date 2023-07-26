@@ -16,6 +16,26 @@
 
 }
 
-.creative-border {
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-items: center;
+}
+
+.grid-container>.card  {
+    width: clamp(15.625rem, 100%, 21.875rem) !important;
+}
+
+.container-content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+@media screen and (max-width: 772px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 
 }
