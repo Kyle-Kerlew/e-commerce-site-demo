@@ -3,6 +3,10 @@ import { Hero } from "../components/shared/hero";
 import Portrait from "../images/portrait.jpg"
 import Portrait2 from "../images/portrait-2.jpg"
 import Portrait3 from "../images/portrait-3.jpg"
+import RosemaryOil from "../images/rosemary-oil-2.jpg";
+import GarlicButter from "../images/garlic-butter.jpg";
+import PepperOliveOil from "../images/pepper-olive-oil.jpg";
+import BlackPepperOil from "../images/black-pepper.jpg";
 import Footer from "../components/shared/footer";
 import "./css/landing.css"
 import InfusionCreator from "../components/shared/infusionCreator";
@@ -19,74 +23,74 @@ function Index() {
                 <div className="container has-text-centered">
                     <div className="my-5">
                         <p className="title">Popular Infusions</p>
-                        <p className="subtitle">Yummy in me tummy</p>
+                        <p className="subtitle">Not Sure What to Get? Take a Look at Our Popular Selections!</p>
                     </div>
                     <div className="container">
-                        <div className="columns cards-row">
-                            <div className="column card">
-                                <div className="card-image">
-                                    <figure className="image is-4by3">
-                                        <img
-                                            src="https://i1.wp.com/www.uhrohmuh.com/wp-content/uploads/2017/05/rosemary-oil-2.jpg?fit=2048%2C1418&ssl=1"
-                                            alt="Placeholder" />
-                                    </figure>
+                        <div className="popular-container">
+                            <div>
+                                <figure className="image is-4by3">
+                                    <img
+                                        src={RosemaryOil}
+                                        alt="Placeholder" />
+                                </figure>
+                                <div>
+                                    <p className="is-size-4 has-text-centered">Rosemary Infused Avocado Oil</p>
                                 </div>
-                                <div className="card-content">
-                                    <div>
-                                        <p className="is-size-4 has-text-centered">Rosemary Infused Olive Oil</p>
-                                    </div>
-                                    <div className="content has-text-centered">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Phasellus nec iaculis mauris.
-                                    </div>
-                                    <div className="is-flex is-justify-content-center">
-                                        <button className="button">I Want This</button>
-                                    </div>
+                                <div className="content has-text-centered">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Phasellus nec iaculis mauris.
+                                </div>
+                                <div className="is-flex is-justify-content-center">
+                                    <button className="button">I Want This</button>
                                 </div>
 
                             </div>
-                            <div className="column card">
-                                <div className="card-image">
-                                    <figure className="image is-4by3">
-                                        <img src="https://healthiersteps.com/wp-content/uploads/2019/01/vegan-garlic-butter.jpg"
-                                            alt="Placeholder" />
-                                    </figure>
+                            <div>
+                                <figure className="image is-4by3">
+                                    <img src={GarlicButter}
+                                        alt="Placeholder" />
+                                </figure>
+                                <div>
+                                    <p className="is-size-4 has-text-centered">Garlic Infused Butter</p>
                                 </div>
-                                <div className="card-content">
-                                    <div>
-                                        <p className="is-size-4 has-text-centered">Garlic Infused Butter</p>
-                                    </div>
-                                    <div className="content has-text-centered">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Phasellus nec iaculis mauris.
-                                    </div>
-                                    <div className="is-flex is-justify-content-center">
-                                        <button className="button">I Want This</button>
-                                    </div>
+                                <div className="content has-text-centered">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Phasellus nec iaculis mauris.
+                                </div>
+                                <div className="is-flex is-justify-content-center">
+                                    <button className="button">I Want This</button>
                                 </div>
                             </div>
-                            <div className="column card">
-                                <div className="card-image">
-                                    <figure className="image is-4by3">
-                                        <img
-                                            src="https://sc01.alicdn.com/kf/HTB1hG_WXND1gK0jSZFKq6AJrVXah/233339078/HTB1hG_WXND1gK0jSZFKq6AJrVXah.jpg"
-                                            alt="Placeholder" />
-                                    </figure>
+                            <div>
+                                <figure className="image is-4by3">
+                                    <img src={PepperOliveOil} alt="Placeholder" />
+                                </figure>
+                                <div>
+                                    <p className="is-size-4 has-text-centered">Cayenne Pepper Infused Olive Oil</p>
                                 </div>
-                                <div className="card-content">
-                                    <div>
-                                        <p className="is-size-4 has-text-centered">Cinnamon Infused Maple Syrup</p>
-                                    </div>
-                                    <div className="content has-text-centered">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Phasellus nec iaculis mauris.
-                                    </div>
-                                    <div className="is-flex is-justify-content-center">
-                                        <button className="button">I Want This</button>
-                                    </div>
+                                <div className="content has-text-centered">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Phasellus nec iaculis mauris.
+                                </div>
+                                <div className="is-flex is-justify-content-center">
+                                    <button className="button">I Want This</button>
                                 </div>
 
                             </div>
+                            <div>
+                                <figure className="image is-4by3">
+                                    <img src={BlackPepperOil} alt="Placeholder" />
+                                </figure>
+                                <div>
+                                    <p className="is-size-4 has-text-centered">Cayenne Pepper Infused Olive Oil</p>
+                                </div>
+                                <div className="content has-text-centered">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Phasellus nec iaculis mauris.
+                                </div>
+                                <div className="is-flex is-justify-content-center">
+                                    <button className="button">I Want This</button>
+                                </div></div>
                         </div>
                     </div>
                 </div>
@@ -97,37 +101,49 @@ function Index() {
                                 <p id="about" className="title has-text-centered">
                                     Who You're Supporting
                                 </p>
+                                <p className="subtitle has-text-centered mb-6">
+                                    Our Team Is Passionate About Their Craft!
+                                </p>
                             </div>
-                            <div className="grid-container">
+                            <div className="grid-container my-5">
                                 <div className="card">
                                     <div className="card-content" >
-                                        <figure className="image is-4by5">
-                                            <img src={Portrait} />
+                                        <figure className="image mb-2" >
+                                            <img src={Portrait} className="is-rounded square-image" />
                                         </figure>
-                                        <p className="is-size-4 has-text-weight-semibold has-text-centered">Aaliyah</p>
-                                        <p className="is-size-5 has-text-centered">Infuser</p>
+                                        <p className="is-size-4 has-text-weight-semibold has-text-centered" style={{ lineHeight: '1.0' }}>Aaliyah</p>
+                                        <p className="is-size-4 has-text-centered text-weight-medium has-text-grey-dark mb-2">Infuser</p>
+                                        <p className="is-size-5 has-text-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris.
+                                            Lectus quam id leo in vitae turpis massa sed. </p>
                                     </div>
                                 </div>
                                 <div className="card">
                                     <div className="card-content" >
-                                        <figure className="image is-4by5">
-                                            <img src={Portrait2} />
+                                        <figure className="image mb-2">
+                                            <img src={Portrait2} className="is-rounded square-image" />
                                         </figure>
-                                        <p className="is-size-4 has-text-weight-semibold has-text-centered">Jason</p>
-                                        <p className="is-size-5 has-text-centered">Infuser</p>
+                                        <p className="is-size-4 has-text-weight-semibold has-text-centered" style={{ lineHeight: '1.0' }}>Jason</p>
+                                        <p className="is-size-4 has-text-centered text-weight-medium has-text-grey-dark mb-2">Infuser</p>
+                                        <p className="is-size-5 has-text-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris.
+                                            Lectus quam id leo in vitae turpis massa sed. </p>
                                     </div>
                                 </div>
                                 <div className="card">
                                     <div className="card-content" >
-                                        <figure className="image is-4by5">
-                                            <img src={Portrait3} />
+                                        <figure className="image mb-2" >
+                                            <img src={Portrait3} className="is-rounded square-image" />
                                         </figure>
-                                        <p className="is-size-4 has-text-weight-semibold has-text-centered">Aisha</p>
-                                        <p className="is-size-5 has-text-centered">Infuser</p>
+                                        <p className="is-size-4 has-text-weight-semibold has-text-centered" style={{ lineHeight: '1.0' }}>Aisha</p>
+                                        <p className="is-size-4 has-text-centered text-weight-medium has-text-grey-dark mb-2">Infuser</p>
+                                        <p className="is-size-5 has-text-centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae congue mauris rhoncus aenean vel elit scelerisque mauris.
+                                            Lectus quam id leo in vitae turpis massa sed. </p>
                                     </div>
                                 </div>
+                            </div>
 
-                            </div>
                         </div>
                     </div>
                 </section >

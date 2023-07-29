@@ -1,5 +1,6 @@
 .checkout-progress {
     margin-bottom: 20px;
+    gap: 1rem;
 }
 
 .checkout-progress > img, span {
@@ -7,5 +8,5 @@
 }
 
 .no-gap {
-    gap: unset !important;
+    /* gap: unset !important; */
 }
