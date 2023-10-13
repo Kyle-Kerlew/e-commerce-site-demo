@@ -8,7 +8,7 @@ const PlaceOrder = ({ cartSubtotal, items }) => {
     }
 
     function setCart() {
-        navigate('/address', { state: {items } })
+        navigate('/address', { state: { items } })
     }
 
     const tax = getTax(cartSubtotal).toFixed(2);
@@ -27,7 +27,7 @@ const PlaceOrder = ({ cartSubtotal, items }) => {
                     <p>Tax:</p>
                     <p>${tax}</p>
                 </div>
-                <hr className="mt-1" />
+                <hr className="mt-1 has-background-primary" />
                 <div className="is-flex is-justify-content-space-between">
                     <b>Total</b>
                     <b>${finalTotal}</b>

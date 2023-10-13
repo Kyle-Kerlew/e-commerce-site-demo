@@ -1,6 +1,7 @@
 {
   "name": "infusion-creations",
   "version": "0.1.0",
+  "main": "src/css/styles.scss",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -90,7 +91,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "css-build": "node-sass --omit-source-map-url src/pages/styles.scss src/pages/css/styles.css",
+    "css-build": "node-sass --omit-source-map-url src/css/styles.scss src/css/global.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "gatsby develop && npm run css-watch",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

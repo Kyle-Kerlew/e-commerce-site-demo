@@ -5,6 +5,7 @@ import QuantityInput from '../form/QuantityInput';
 
 const CartItem = ({ item, modifyCart }) => {
     const { base, size, ingredients, price } = item;
+    console.log(ingredients)
     const [quantity, setQuantity] = useState(1);
 
     function incrementQuantity() {
@@ -30,7 +31,7 @@ const CartItem = ({ item, modifyCart }) => {
                 <div className='is-flex gap-1'>
                     <div className="card-image">
                         <figure className='image is-128x128'>
-                            <img className='is-fullheight' src={OilPhoto1} alt="Oil" />
+                            <img className='is-fullheight' src={OilPhoto1} alt="Placeholder Image" />
                         </figure>
                     </div>
                     <div>
@@ -38,7 +39,7 @@ const CartItem = ({ item, modifyCart }) => {
                         <p className="m-0">Base: {base}</p>
                         <p className="m-0">Size: {size}</p>
                         <p className="m-0">Ingredients: {ingredients}</p>
-                        <p className="m-0 has-text-weight-bold">${price}</p>
+                        <p className="m-0 has-text-weight-semibold">${price}</p>
                     </div>
                 </div>
                 <div className='is-flex is-align-items-center is-justify-content-flex-start'>

@@ -1,28 +1,35 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import MasonJar from "../../images/mason-jar.svg";
 import Leaf from "../../images/Leaf.svg";
 import Drop from "../../images/Drop.svg";
 import Selector from "./form/selector";
-import {navigate} from "gatsby-link";
+import { navigate } from "gatsby-link";
 import { connect } from "react-redux"
 
-function InfusionCreator(props) {
+function InfusionCreator() {
     const [loading, setLoading] = useState(false);
     const [selections, setSelections] = useState({})
     function startInfusion() {
         setLoading(true);
         //ensure a selection has been made for each category 
-        const search = new URLSearchParams({...selections});
-        console.log("search", );
+        const search = new URLSearchParams({ ...selections });
         navigate(`/cart?${search.toString()}`);
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (Object.keys(selections).length !== 3) {
+            alert("Please select a base, ingredients, and size.")
+            return;
+        }
+        startInfusion();
+    }
     return (
-        <div className={"is-flex container is-flex-direction-column"}>
+        <form onSubmit={handleSubmit} className={"is-flex container is-flex-direction-column"}>
             <div className={"columns mb-5"}>
                 <div className={"column"}>
-                    <img src={Drop} alt="Drop Icon" style={{height: '5rem'}}/>
-                    <p style={{whiteSpace: 'noWrap'}}>Select Your Infusion base</p>
+                    <img src={Drop} alt="Drop Icon" style={{ height: '5rem' }} />
+                    <h2 className='subtitle is-5 mt-2' style={{ whiteSpace: 'noWrap' }}>Select Your Infusion base</h2>
                     <div className="box">
                         <Selector
                             name={"base"}
@@ -35,12 +42,12 @@ function InfusionCreator(props) {
                                     "Avocado Oil",
                                     "Olive Oil",
                                 ]
-                            }/>
+                            } />
                     </div>
                 </div>
                 <div className={"column"}>
-                    <img src={Leaf} style={{height: '5rem'}}/>
-                    <p>Select Your Ingredients</p>
+                    <img src={Leaf} style={{ height: '5rem' }} alt ="Leaf Icon"/>
+                    <h2 className='subtitle is-5 mt-2'>Select Your Ingredients</h2>
                     <div className={"box"}>
                         <Selector
                             multiple
@@ -54,12 +61,12 @@ function InfusionCreator(props) {
                                     "Rosemary",
                                     "Black Pepper"
                                 ]
-                            }/>
+                            } />
                     </div>
                 </div>
                 <div className={"column"}>
-                    <img src={MasonJar} style={{width: '5rem'}}/>
-                    <p>Select Your Size</p>
+                    <img src={MasonJar} style={{ width: '5rem' }} alt="Mason Jar Icon" />
+                    <h2 className='subtitle is-5 mt-2'>Select Your Size</h2>
                     <div className={"box"}>
                         <Selector
                             name={"size"}
@@ -72,17 +79,17 @@ function InfusionCreator(props) {
                                     "4 Oz",
                                     "2 Oz",
                                 ]
-                            }/>
+                            } />
                     </div>
                 </div>
             </div>
             <div className="is-flex is-flex-direction-row is-fullwidth is-justify-content-center">
-                <button className={"button is-link is-large " + (loading ? "is-loading" : "")}
-                        onClick={startInfusion}>
+                <button className={"button is-rounded is-large is-link " + (loading ? "is-loading" : "")}
+                    type="submit">
                     Infuse
                 </button>
             </div>
-        </div>
+        </form>
     )
 }
 const mapDispatchToProps = dispatch => {

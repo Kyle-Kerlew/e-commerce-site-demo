@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-
+import Logo from '../../images/logo.png';
 function NavigationBar() {
     const [navBurgerActive, setNavBurgerActive] = useState(false);
 
     return (
         <nav className="navbar has-background-primary">
-            <div className="container">
+            <div className="container is-max-widescreen	">
                 <div className="navbar-brand">
                     <a className="navbar-item">
-                        <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo" />
+                        <img src={Logo}  alt="Logo" />
                     </a>
                     <a role="button" className={"navbar-burger" + (navBurgerActive ? " is-active" : "")}
                         data-target="navbarMenuHeroA" aria-label="menu" aria-expanded="false" onClick={(e) => {
@@ -26,13 +26,13 @@ function NavigationBar() {
                 <div id="navbarMenuHeroA" className="navbar-menu">
                     <div className="navbar-end">
                         <span className="navbar-item">
-                            <a className="navbar-item">
+                            <a className="navbar-item" href="/">
                                 Home
                             </a>
                             <a className="navbar-item" href='#about'>
                                 About Us
                             </a>
-                            <a className="button is-primary is-inverted" href="/blog">
+                            <a className="button ml-3 is-link" href="/blog">
                                 Blog
                             </a>
                         </span>

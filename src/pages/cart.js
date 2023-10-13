@@ -5,6 +5,8 @@ import PlaceOrder from "../components/shared/checkout/placeOrder";
 import "./css/cart.css";
 import { connect } from "react-redux"
 import Layout from '../templates/layout';
+import CheckoutProgress from "../components/shared/checkout/checkoutProgress";
+import CheckoutState from '../types/checkoutState';
 
 function CartPage({ location }) {
     const data = new URLSearchParams(location.search);
@@ -67,6 +69,7 @@ function CartPage({ location }) {
         //manually assign price based on item
         obj['price'] = getPrice(obj);
         obj['quantity'] = 1;
+        obj['ingredients'] = obj.ingredients.replace(",", ", "); //add space after commas in list
         return [obj]
     })());
 
@@ -79,6 +82,9 @@ function CartPage({ location }) {
 
     return (
         <Layout>
+            <div className="pt-5">
+                <CheckoutProgress stage={CheckoutState.CART} />
+            </div>
             <div className='cart-grid'>
                 <div className='has-background-white-ter m-5 p-5'>
                     <div className="is-size-3">Shopping Cart</div>
@@ -87,7 +93,7 @@ function CartPage({ location }) {
                             cart.map(item => {
                                 return (
                                     <React.Fragment>
-                                        <div className='grid-container has-background-white-ter m-2 p-5'>
+                                        <div className='cart-items has-background-white-ter m-2 p-5'>
                                             <CartItem item={item} modifyCart={setCart} />
                                         </div>
                                     </React.Fragment>
@@ -95,12 +101,13 @@ function CartPage({ location }) {
                                 )
                             })}
                     </div>
-                    <hr />
-                    <div className=''>Subtotal:
-                        <strong>
+                    <hr className='has-background-primary'/>
+                    <span>
+                        Subtotal:
+                        <strong className='ml-1'>
                             ${cartSubtotal}
                         </strong>
-                    </div>
+                    </span>
                 </div>
                 <div className='has-background-white-ter m-5 p-5'>
                     <PlaceOrder cartSubtotal={cartSubtotal} items={cart} />

@@ -9,7 +9,7 @@
     height: fit-content;
 }
 
-.grid-container {
+.cart-items {
     display: grid;
     grid-template-columns: 1fr;
 }

@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+//override bulmla defaults
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+
+// Update Bulma's global variables
+$grey-dark: $brown;
+$grey-light: $beige-light;
+
+$link: #3A7412;
+$primary: #8ABD91;
+$text: black;
+$nav-color: #404040;
+
+$button-text: #FFFFFF;
+
+$subtitle-color: hsl(0, 0%, 19%);
+$title-color: hsl(0, 0%, 7%);
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+body {
+  background-color: #FFFFFF;
+}
+
+.is-fullheight {
+  height: 100% !important;
+}
+
+hr {
+  background-color: $primary;
+  height: 1px;
+  margin: unset;
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
+.no-margin {
+  margin: unset !important;
+}
+
+.no-padding {
+  padding: unset !important;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+
+.subtitle {
+  line-height: 1.2 !important;
+  color: $subtitle-color !important;
+}
+
+.title {
+  line-height: 1.5 !important;
+  color: $title-color !important;
+}
+
+.button {
+  color: $button-text;
+}
+
+.button {
+  font-weight: 500;
+}
+
+.button.is-primary:not(.is-light) {
+  color: black !important;
+}
+
+.navbar-item {
+  color: $nav-color !important;
+}
+
+//invert text color for readability 
+.is-active {
+  color: white !important;
+}
+
+.logo {
+  max-height: 2.5rem;
+}
+
+@import "../../node_modules/bulma/bulma.sass";

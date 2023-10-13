@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from "gatsby-link";
 import { graphql } from "gatsby";
-import "./css/styles.css";
 import NavigationBar from "../components/navigation/navigationBar";
 import Footer from '../components/shared/footer';
 const Blog = ({ data }) => {
