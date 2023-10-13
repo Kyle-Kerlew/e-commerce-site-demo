@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
 
 //TODO: REMOVE URL FROM GIT HISTORY AND ADD TO ENV FILE
-const uri = "***REMOVED***/?retryWrites=true&w=majority";
+const uri = "";
 const client = new MongoClient(uri);
 const db = client.db('infusion_creations')
 

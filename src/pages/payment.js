@@ -8,7 +8,7 @@ import Layout from '../templates/layout';
 
 //outside of function because we only need one instance
 //TODO: Remove key from source history
-const stripePromise = loadStripe("***REMOVED***");
+const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
 function PaymentPage({ location }) {
     const { cart, address } = location.state;
