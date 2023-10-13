@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./selector.css";
 
-function Selector({options, multiple = false, setSelections, name}) {
+function Selector({ options, multiple = false, setSelections, name }) {
     const [selected, setSelected] = useState(undefined);
 
     function handleSelect(option) {
@@ -11,7 +11,7 @@ function Selector({options, multiple = false, setSelections, name}) {
                 setSelected(prevState => {
                     if (prevState) {
                         prevState.splice(prevState.indexOf(option), 1)
-                        setSelections(prev => ({...prev, [name]: {...prevState}}));
+                        setSelections(prev => ({ ...prev, [name]: { ...prevState } }));
                         return prevState;
                     } else {
                         return [];
@@ -20,17 +20,16 @@ function Selector({options, multiple = false, setSelections, name}) {
             } else {
                 setSelected(prevState => {
                     const result = prevState ? prevState.concat(option) : [].concat(option);
-                    setSelections(prev => ({...prev, [name]: result}));
+                    setSelections(prev => ({ ...prev, [name]: result }));
                     return result;
                 });
             }
         } else {
             setSelected(() => {
-                setSelections(prev => ({...prev, [name]:option}))
+                setSelections(prev => ({ ...prev, [name]: option }))
                 return option;
             });
         }
-        console.log(selected)
     }
 
     function getSelectedClassname(option) {
@@ -52,8 +51,8 @@ function Selector({options, multiple = false, setSelections, name}) {
                 <ul className={"menu-list no-bullet"}>
                     {options.map(option => (
                         <li key={option}>
-                            <a className={getSelectedClassname(option)}
-                               onClick={() => handleSelect(option)}>
+                            <a className={'text ' + getSelectedClassname(option)}
+                                onClick={() => handleSelect(option)}>
                                 {option}
                             </a>
                         </li>

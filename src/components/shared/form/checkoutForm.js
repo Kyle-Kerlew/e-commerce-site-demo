@@ -5,7 +5,7 @@ import {
     useElements
 } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ address, items }) {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -54,19 +54,21 @@ export default function CheckoutForm() {
 
         setIsLoading(true);
 
+        const order = await fetch(`${process.env.BASE_URL}/create-order`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            //load items from cart
+            body: JSON.stringify({ items, address }),
+        })
+
+        const { orderId } = await order.json();
+        console.log(orderId);
         const { error } = await stripe.confirmPayment({
             elements,
             confirmParams: {
-                // Make sure to change this to your payment completion page
-                return_url: "http://localhost:8000",
-            },
+                return_url: "http://localhost:8000/confirmation?order_id=" + orderId,
+            }
         });
-
-        // This point will only be reached if there is an immediate error when
-        // confirming the payment. Otherwise, your customer will be redirected to
-        // your `return_url`. For some payment methods like iDEAL, your customer will
-        // be redirected to an intermediate site first to authorize the payment, then
-        // redirected to the `return_url`.
         if (error.type === "card_error" || error.type === "validation_error") {
             setMessage(error.message);
         } else {

@@ -1,5 +1,7 @@
 #IDE
 .idea
+#ENV
+.env.*
 
 #generated
 build

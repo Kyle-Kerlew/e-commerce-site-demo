@@ -56,6 +56,10 @@ const Address = ({ location }) => {
                                 <label className="label">State</label>
                                 <input className="input" required name="state" type="text" />
                             </div>
+                            <div className="field">
+                                <label className="label">Zip Code</label>
+                                <input className="input" required name="zip" type="text" />
+                            </div>
                             <div className="field wide">
                                 <label className="label">Country</label>
                                 <input className="input" required name="country" type="text" />
@@ -63,7 +67,7 @@ const Address = ({ location }) => {
                         </div>
                         <div className="control">
                             <button type="submit" className="button is-medium is-fullwidth is-primary">
-                                Submit
+                                Continue to Payment
                             </button>
                         </div>
                     </div>

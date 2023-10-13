@@ -1,15 +1,17 @@
 {
   "name": "create-infusions",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "mongodb": "5.7",
     "morgan": "~1.9.1",
     "stripe": "^8.209.0"
   }

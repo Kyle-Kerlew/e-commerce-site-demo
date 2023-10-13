@@ -7,16 +7,16 @@ import CheckoutState from "../types/checkoutState";
 import Layout from '../templates/layout';
 
 //outside of function because we only need one instance
+//TODO: Remove key from source history
 const stripePromise = loadStripe("pk_test_51KchKjBnhd3hTTDFY5SHc201jrZoDuKbEYKdvOWRQtW9eM8JBkbYEAJOmBAAnI4QvF8NFFEyvswbK2ydbdIg9L3600orsbei5p");
 
 function PaymentPage({ location }) {
-    console.log(location.state)
     const { cart, address } = location.state;
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
         // Load items from cart including prices to create payment intent
-        fetch("http://localhost:4242/create-payment-intent", {
+        fetch(`${process.env.BASE_URL}/create-payment-intent`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             //load items from cart
@@ -40,7 +40,7 @@ function PaymentPage({ location }) {
                 <CheckoutProgress stage={CheckoutState.PAYMENT} />
                 {clientSecret && (
                     <Elements options={options} stripe={stripePromise}>
-                        <CheckoutForm />
+                        <CheckoutForm address={address} items={cart} />
                     </Elements>
                 )}
             </div>
